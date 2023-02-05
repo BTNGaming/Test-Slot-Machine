@@ -3,11 +3,11 @@ from discord.ext import commands
 import asyncio
 import random
 
-class SlotMachine(commands.Cog):
+class TestSlots(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.command(name='slot')
+    @commands.command(name='testslots')
     async def slot_machine(self, ctx):
         emojis = ['🍒', '🍊', '🍇', '🍉', '💰']
         spinning_emojis = ['⠀', '⠁', '⠂', '⠃', '⠄', '⠅', '⠆', '⠇']
@@ -23,4 +23,4 @@ class SlotMachine(commands.Cog):
             await ctx.send("Better luck next time.")
 
 def setup(bot):
-    bot.add_cog(SlotMachine(bot))
+    bot.add_cog(TestSlots(bot))
