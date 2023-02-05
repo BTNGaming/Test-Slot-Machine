@@ -1,5 +1,4 @@
-import discord
-from discord.ext import commands
+from redbot.core import commands
 import asyncio
 import random
 
@@ -21,6 +20,3 @@ class TestSlots(commands.Cog):
             await ctx.send("Congratulations! You've hit the jackpot!")
         else:
             await ctx.send("Better luck next time.")
-
-def setup(bot):
-    bot.add_cog(TestSlots(bot))
