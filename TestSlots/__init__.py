@@ -1,5 +1,5 @@
-from .testslotmachine import TestSlotMachine
+from .mycog import MyCog
 
 
 def setup(bot):
-    bot.add_cog(TestSlotMachine(bot))
+    bot.add_cog(MyCog(bot))

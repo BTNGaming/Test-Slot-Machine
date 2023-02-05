@@ -1,7 +1,7 @@
 from redbot.core import commands
 
-class TestSlotMachine(commands.Cog):
-    """MY Test Slot Machine Cog"""
+class MyCog(commands.Cog):
+    """My custom cog"""
 
     def __init__(self, bot):
         self.bot = bot
