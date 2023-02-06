@@ -13,7 +13,7 @@ class TestSlots(commands.Cog):
         spinning_emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
 
         result = [    [random.choice(emojis) for i in range(3)],
-            ">"[random.choice(emojis) for i in range(3)]"<",
+            [random.choice(emojis) for i in range(3)],
             [random.choice(emojis) for i in range(3)],
         ]
 
