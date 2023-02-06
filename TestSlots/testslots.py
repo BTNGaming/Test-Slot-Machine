@@ -9,7 +9,7 @@ class TestSlots(commands.Cog):
 
     @commands.command()
     async def aslot(self, ctx):
-        emojis = [":cherries:", ":cookie:"]
+        emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
         spinning_emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
 
         result = [    [random.choice(emojis) for i in range(3)],
