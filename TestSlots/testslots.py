@@ -1,4 +1,3 @@
-from random import randint, choice
 from redbot.core import commands
 import asyncio
 import random
@@ -29,32 +28,21 @@ class TestSlots(commands.Cog):
 
     @commands.command()
     async def aslot(self, ctx):
-        reel_pattern = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
-        padding_before = [":mushroom:", ":heart:", ":snowflake:"]
-        padding_after = [":cherries:", ":cookie:", ":two:"]
+        emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
         spinning_emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
-        reel = padding_before + reel_pattern + padding_after
 
-        reels = []
-        for i in range(0, 3):
-            n = randint(3,12)
-            reels.append([reel[n - 1], reel[n], reel[n + 1]])
-            result = [reels[0][1], reels[1][1], reels[2][1]]
-
-            display_reels = "  " + reels[0][0] + " " + reels[1][0] + " " + reels[2][0] + "\n"
-            display_reels += ">" + reels[0][1] + " " + reels[1][1] + " " + reels[2][1] + "\n"
-            display_reels += "  " + reels[0][2] + " " + reels[1][2] + " " + reels[2][2] + "\n"
-
-        # result = [random.choice(emojis) for i in range(3)]
+        result = [random.choice(emojis) for i in range(3)]
 
         embed = discord.Embed(
             title="Animated Slot Machine",
-            description=" ".join(display_reels),
+            description=" ".join(result),
             color=discord.Color.red()
         )
         message = await ctx.send(embed=embed)
 
         for i in range(8):
+            embed.description = " ".join([random.choice(spinning_emojis) for _ in range(3)])
+            embed.description = " ".join([random.choice(spinning_emojis) for _ in range(3)])
             embed.description = " ".join([random.choice(spinning_emojis) for _ in range(3)])
             await message.edit(embed=embed)
             await asyncio.sleep(0.5)
