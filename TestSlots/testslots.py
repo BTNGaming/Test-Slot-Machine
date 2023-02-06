@@ -1,3 +1,4 @@
+from random import randint, choice
 from redbot.core import commands
 import asyncio
 import random
