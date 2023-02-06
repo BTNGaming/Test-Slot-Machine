@@ -32,17 +32,18 @@ class TestSlots(commands.Cog):
         spinning_emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
 
         result = [random.choice(emojis) for i in range(3)]
+        reel1 = random.choice(spinning_emojis)
+        reel1 = random.choice(emojis)
+        reel1 = random.choice(spinning_emojis)
 
         embed = discord.Embed(
             title="Animated Slot Machine",
-            description=" ".join(result),
+            description=f'{reel1} | {reel2} | {reel3}',
             color=discord.Color.red()
         )
         message = await ctx.send(embed=embed)
 
         for i in range(8):
-            embed.description = " ".join([random.choice(spinning_emojis) for _ in range(3)])
-            embed.description = " ".join([random.choice(spinning_emojis) for _ in range(3)])
             embed.description = " ".join([random.choice(spinning_emojis) for _ in range(3)])
             await message.edit(embed=embed)
             await asyncio.sleep(0.5)
