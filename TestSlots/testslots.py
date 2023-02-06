@@ -48,8 +48,8 @@ class TestSlots(commands.Cog):
         await message.edit(embed=embed)
 
         if result[0] == result[1] == result[2]:
-            embed.description = "Congratulations! You've hit the jackpot!"
+            await ctx.send("Congratulations! You've hit the jackpot!")
         else:
-            embed.description = "Better luck next time."
+            await ctx.send("Better luck next time.")
 
         await message.edit(embed=embed)
