@@ -12,35 +12,25 @@ class TestSlots(commands.Cog):
         emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
         spinning_emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
 
-        result = [random.choice(emojis) for i in range(3)]
-        reel1 = random.choice(spinning_emojis)
-        reel2 = random.choice(emojis)
-        reel3 = random.choice(spinning_emojis)
-        # reel4 = random.choice(spinning_emojis)
-        # reel5 = random.choice(spinning_emojis)
-        # reel6 = random.choice(spinning_emojis)
-        # reel7 = random.choice(spinning_emojis)
-        # reel8 = random.choice(spinning_emojis)
-        # reel9 = random.choice(spinning_emojis)
+        result = [[random.choice(emojis) for j in range(3)] for i in range(3)]
 
         embed = discord.Embed(
             title="Animated Slot Machine",
-            description=f'{reel1} | {reel2} | {reel3}',
+            description=f'{" | ".join(result[0])}\n{" | ".join(result[1])}\n{" | ".join(result[2])}',
             color=discord.Color.red()
         )
         message = await ctx.send(embed=embed)
 
         for i in range(8):
-            embed.description = " ".join([reel1 | reel2 | reel3])
+            spinning_results = [[random.choice(spinning_emojis) for j in range(3)] for i in range(3)]
+            embed.description = "\n".join([f'{" | ".join(row)}' for row in spinning_results])
             await message.edit(embed=embed)
             await asyncio.sleep(0.5)
 
-        embed.description = " ".join(result)
+        embed.description = "\n".join([f'{" | ".join(row)}' for row in result])
         await message.edit(embed=embed)
 
-        if result[0] == result[1] == result[2]:
+        if all(result[0][i] == result[1][i] == result[2][i] for i in range(3)):
             await ctx.send("Congratulations! You've hit the jackpot!")
         else:
             await ctx.send("Better luck next time.")
-
-        await message.edit(embed=embed)
