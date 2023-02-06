@@ -49,7 +49,7 @@ class TestSlots(commands.Cog):
 
         embed = discord.Embed(
             title="Animated Slot Machine",
-            description=" ".join(result),
+            description=" ".join(display_reels),
             color=discord.Color.red()
         )
         message = await ctx.send(embed=embed)
