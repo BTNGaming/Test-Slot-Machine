@@ -35,10 +35,19 @@ class TestSlots(commands.Cog):
         reel1 = random.choice(spinning_emojis)
         reel2 = random.choice(emojis)
         reel3 = random.choice(spinning_emojis)
+        reel4 = random.choice(spinning_emojis)
+        reel5 = random.choice(spinning_emojis)
+        reel6 = random.choice(spinning_emojis)
+        reel7 = random.choice(spinning_emojis)
+        reel8 = random.choice(spinning_emojis)
+        reel9 = random.choice(spinning_emojis)
 
         embed = discord.Embed(
             title="Animated Slot Machine",
-            description=f'{reel1} | {reel2} | {reel3}',
+            description=
+            f'{reel4} | {reel5} | {reel6}'
+            f'{reel1} | {reel2} | {reel3}'
+            f'{reel7} | {reel8} | {reel9}',
             color=discord.Color.red()
         )
         message = await ctx.send(embed=embed)
