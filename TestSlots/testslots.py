@@ -26,7 +26,7 @@ class TestSlots(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def slot(self, ctx):
+    async def aslot(self, ctx):
         emojis = ['🍒', '🍊', '🍇', '🍉', '💰']
         spinning_emojis = ['⠀', '⠁', '⠂', '⠃', '⠄', '⠅', '⠆', '⠇']
         result = [random.choice(emojis) for i in range(3)]
