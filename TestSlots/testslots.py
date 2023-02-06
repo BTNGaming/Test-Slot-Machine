@@ -9,10 +9,13 @@ class TestSlots(commands.Cog):
 
     @commands.command()
     async def aslot(self, ctx):
-        emojis = [":cherries:", ":cookie:", ":two:"]
-        spinning_emojis = [":mushroom:", ":heart:", ":snowflake:"]
-
-        result = [[random.choice(emojis) for j in range(3)] for i in range(3)]
+        emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
+        spinning_emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
+        
+        result = [    [random.choice(emojis) for i in range(3)],
+            [random.choice(emojis) for i in range(3)],
+            [random.choice(emojis) for i in range(3)],
+        ]
 
         embed = discord.Embed(
             title="Animated Slot Machine",
@@ -23,11 +26,13 @@ class TestSlots(commands.Cog):
 
         for i in range(8):
             spinning_results = [[random.choice(spinning_emojis) for j in range(3)] for i in range(3)]
-            embed.description = "\n".join([f'>{" | ".join(row)}<' for row in spinning_results])
+            embed.description = "\n".join([f'{" | ".join(row)}' for row in spinning_results])
             await message.edit(embed=embed)
             await asyncio.sleep(0.5)
 
-        embed.description = "\n".join([f'>{" | ".join(row)}<' for row in result])
+        embed.description = f"{result[0][0]} | {result[0][1]} | {result[0][2]}\n" \
+                    f">{result[1][0]} | {result[1][1]} | {result[1][2]}\n<" \
+                    f"{result[2][0]} | {result[2][1]} | {result[2][2]}"
         await message.edit(embed=embed)
 
         if all(result[0][i] == result[1][i] == result[2][i] for i in range(3)):
