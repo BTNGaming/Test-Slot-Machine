@@ -1,6 +1,7 @@
 from redbot.core import commands
 import asyncio
 import random
+import discord
 
 # class TestSlots(commands.Cog):
 #     def __init__(self, bot):
