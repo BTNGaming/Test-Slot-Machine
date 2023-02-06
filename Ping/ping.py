@@ -6,7 +6,7 @@ class Ping(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="ping", aliases=["p"])
+    @commands.command(name="ping2", aliases=["p"])
     async def _ping(self, ctx):
         """Replies with 'Pong!'"""
         await ctx.send("Pong!")
