@@ -35,7 +35,7 @@ class TestSlots(commands.Cog):
                     f"x{result[2][0]} | {result[2][1]} | {result[2][2]}x"
         await message.edit(embed=embed)
 
-        if all(result[0][i] == result[1][i] == result[2][i] for i in range(3)):
+        if all(result[1][0] == result[1][1] == result[1][2] for i in range(3)):
             await ctx.send("Congratulations! You've hit the jackpot!")
         else:
             await ctx.send("Better luck next time.")
