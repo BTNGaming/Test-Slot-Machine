@@ -11,9 +11,9 @@ class TestSlots(commands.Cog):
     async def aslot(self, ctx):
         emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
         spinning_emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
-        
+
         result = [    [random.choice(emojis) for i in range(3)],
-            [random.choice(emojis) for i in range(3)],
+            ">"[random.choice(emojis) for i in range(3)]"<",
             [random.choice(emojis) for i in range(3)],
         ]
 
@@ -31,7 +31,7 @@ class TestSlots(commands.Cog):
             await asyncio.sleep(0.5)
 
         embed.description = f"{result[0][0]} | {result[0][1]} | {result[0][2]}\n" \
-                    f">{result[1][0]} | {result[1][1]} | {result[1][2]}\n<" \
+                    f">{result[1][0]} | {result[1][1]} | {result[1][2]}<\n" \
                     f"{result[2][0]} | {result[2][1]} | {result[2][2]}"
         await message.edit(embed=embed)
 
