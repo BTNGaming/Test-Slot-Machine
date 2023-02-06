@@ -22,6 +22,9 @@ import random
 #             await ctx.send("Better luck next time.")
 
 class TestSlots(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
     @commands.command()
     async def slot(self, ctx):
         emojis = ['🍒', '🍊', '🍇', '🍉', '💰']
