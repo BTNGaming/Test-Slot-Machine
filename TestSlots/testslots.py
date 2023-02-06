@@ -13,9 +13,9 @@ class TestSlots(commands.Cog):
         spinning_emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
 
         result = [random.choice(emojis) for i in range(3)]
-        reel1 = random.choice(emojis)
+        reel1 = random.choice(spinning_emojis)
         reel2 = random.choice(emojis)
-        reel3 = random.choice(emojis)
+        reel3 = random.choice(spinning_emojis)
         # reel4 = random.choice(spinning_emojis)
         # reel5 = random.choice(spinning_emojis)
         # reel6 = random.choice(spinning_emojis)
@@ -31,7 +31,7 @@ class TestSlots(commands.Cog):
         message = await ctx.send(embed=embed)
 
         for i in range(8):
-            embed.description = " ".join([reel1 | reel2 | reel3 for _ in range(3)])
+            embed.description = " ".join([reel1 | reel2 | reel3])
             await message.edit(embed=embed)
             await asyncio.sleep(0.5)
 
