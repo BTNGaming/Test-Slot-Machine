@@ -16,7 +16,7 @@ class TestSlots(commands.Cog):
 
         embed = discord.Embed(
             title="Animated Slot Machine",
-            description=f'{" | ".join(result[0])}\n{" | ".join(result[1])}\n{" | ".join(result[2])}',
+            description=f'{" | ".join(result[0])}\n{" | >".join(result[1])}\n{"< | ".join(result[2])}',
             color=discord.Color.red()
         )
         message = await ctx.send(embed=embed)
