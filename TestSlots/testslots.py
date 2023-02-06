@@ -23,11 +23,11 @@ class TestSlots(commands.Cog):
 
         for i in range(8):
             spinning_results = [[random.choice(spinning_emojis) for j in range(3)] for i in range(3)]
-            embed.description = "\n".join([f'{" | ".join(row)}' for row in spinning_results])
+            embed.description = "\n".join([f'>{" | ".join(row)}<' for row in spinning_results])
             await message.edit(embed=embed)
             await asyncio.sleep(0.5)
 
-        embed.description = "\n".join([f'{" | ".join(row)}' for row in result])
+        embed.description = "\n".join([f'>{" | ".join(row)}<' for row in result])
         await message.edit(embed=embed)
 
         if all(result[0][i] == result[1][i] == result[2][i] for i in range(3)):
