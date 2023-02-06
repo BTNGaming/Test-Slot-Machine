@@ -29,8 +29,11 @@ class TestSlots(commands.Cog):
 
     @commands.command()
     async def aslot(self, ctx):
-        emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
+        reel_pattern = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
+        padding_before = [":mushroom:", ":heart:", ":snowflake:"]
+        padding_after = [":cherries:", ":cookie:", ":two:"]
         spinning_emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
+        reel = padding_before + reel_pattern + padding_after
 
         reels = []
         for i in range(0, 3):
