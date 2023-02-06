@@ -30,6 +30,17 @@ class TestSlots(commands.Cog):
     async def aslot(self, ctx):
         emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
         spinning_emojis = [":cherries:", ":cookie:", ":two:", ":four_leaf_clover:", ":cyclone:", ":sunflower:", ":six:", ":mushroom:", ":heart:", ":snowflake:"]
+        
+    	reels = []
+    	for i in range(0, 3):
+		    n = randint(3,12)
+		    reels.append([reel[n - 1], reel[n], reel[n + 1]])
+    	result = [reels[0][1], reels[1][1], reels[2][1]]
+
+    	display_reels = "  " + reels[0][0] + " " + reels[1][0] + " " + reels[2][0] + "\n"
+    	display_reels += ">" + reels[0][1] + " " + reels[1][1] + " " + reels[2][1] + "\n"
+    	display_reels += "  " + reels[0][2] + " " + reels[1][2] + " " + reels[2][2] + "\n"
+
         result = [random.choice(emojis) for i in range(3)]
 
         embed = discord.Embed(
