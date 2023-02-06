@@ -33,8 +33,8 @@ class TestSlots(commands.Cog):
 
         result = [random.choice(emojis) for i in range(3)]
         reel1 = random.choice(spinning_emojis)
-        reel1 = random.choice(emojis)
-        reel1 = random.choice(spinning_emojis)
+        reel2 = random.choice(emojis)
+        reel3 = random.choice(spinning_emojis)
 
         embed = discord.Embed(
             title="Animated Slot Machine",
